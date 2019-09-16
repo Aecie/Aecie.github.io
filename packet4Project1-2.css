@@ -1,0 +1,22 @@
+h1{
+	font-family: Fantasy;
+	font-size: 60px;
+}
+
+.contact{
+	font-family:Fantasy;
+	font-size: 40px;
+}
+
+#info, #pointer, div div h4{
+	font-weight: normal;
+}
+
+#info a{
+	text-decoration: none;
+}
+
+#Map, #copy{
+	font-style: italic;
+	font-weight: normal;
+}
