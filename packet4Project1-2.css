@@ -1,50 +1,53 @@
-header{
-	background-color: #CC0000;
-	color: gold;
+#upH, footer{
+	background-color: #990000;
 }
 
-header h1{
-	font-family: Fantasy;
+#upH a, footer a{
+	color: #FF99FF;
+	text-decoration:none;
+}
+
+#midH{
+	background-color: red;
 	font-size: 60px;
-}
-
-header ul li a{
+	font-weight: bold;
 	color: white;
+}
+
+#downH{
+	background-color: #FFCCFF;
+	height = 20px;
+}
+
+#downH a{
+	color: #990000;
 	text-decoration: none;
 }
 
-.contact{
-	font-family:Fantasy;
-	font-size: 40px;
+#topic{
+	background-color: red;
+	font-size: 30px;
+	color: white;
 }
 
-article div{
-	background-color: #0099FF;
+#contents{
+	border: 2px solid red;
 }
 
-div strong{
-	color: #FF0033;
-}
-
-#info, #pointer, div div h4{
-	font-weight: normal;
-}
-
-#info a{
-	text-decoration: none;
-}
-
-#Map, #copy{
+#contents span{
 	font-style: italic;
-	font-weight: normal;
+	color: #808080;
 }
 
-footer{
-	background-color: #CC0000;
-	color: gold;
+#end{
+	background-color: red;
+	height: 25px;
 }
 
-footer a{
-	text-decoration: none;
+#b a, #contents a{
+	color: #990000;
+}
+
+footer i{
 	color: white;
 }
