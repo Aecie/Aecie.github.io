@@ -1,11 +1,29 @@
-h1{
+header{
+	background-color: #CC0000;
+	color: gold;
+}
+
+header h1{
 	font-family: Fantasy;
 	font-size: 60px;
+}
+
+header ul li a{
+	color: white;
+	text-decoration: none;
 }
 
 .contact{
 	font-family:Fantasy;
 	font-size: 40px;
+}
+
+article div{
+	background-color: #0099FF;
+}
+
+div strong{
+	color: #FF0033;
 }
 
 #info, #pointer, div div h4{
@@ -19,4 +37,14 @@ h1{
 #Map, #copy{
 	font-style: italic;
 	font-weight: normal;
+}
+
+footer{
+	background-color: #CC0000;
+	color: gold;
+}
+
+footer a{
+	text-decoration: none;
+	color: white;
 }
