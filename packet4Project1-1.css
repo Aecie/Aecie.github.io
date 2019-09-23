@@ -1,5 +1,7 @@
 header, footer div{
-	background-color: #000099;
+	background-color: #3D6271;
+	color: white;
+	margin: 0em 4em 0.5em 4em;
 }
 
 header h1, header small a, footer div p small, footer div{
@@ -7,7 +9,7 @@ header h1, header small a, footer div p small, footer div{
 }
 
 #ref{
-	background-color: #9999FF;
+	background-color: rgb(114,140,152);
 }
 
 #ref h4 a, footer div a{
@@ -33,6 +35,11 @@ li h4 a{
 .titleToPicture, p small{
 	color: #808080;
 	font-style: italic;
+}
+
+article{
+	margin: 0em 4em 0.5em 4em;
+	background-color: white;
 }
 
 article #share{
