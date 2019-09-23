@@ -2,39 +2,45 @@
 <html>
 	<head> <title> Aecie IAD Project </title> </head>
 	<style>
-		body{
-			background: url("image/another.jpg") center 0 no-repeat;
-			background-color: red;
-		}
 		header {
 			background-color: rgba(0, 0, 0, 0.5);
 			color: white;
 		}
 		header div span {
-			font-size: 100px;
+			font-size: 80px;
 			font-weight: bold;
 		}
-		.red {
-			color: red;
+		.red{
+			color: rgb(226, 159, 210);
 		}
 		
 		p strong {
 			font-size: 30px;
 		}
-		
+		#JPG{
+			position: absolute;
+			left: 15%;
+			width: 70%;
+			height:100%;
+			z-index: -1;
+		}
 	</style>
-	<body>
+	<body style = "background: url('image/DayBG.jpg') no-repeat;
+				   background-size: 100% 100%;
+				   width: 100%; height: 100%;
+				   background-attachment: fixed;">
+
+		<img id = "JPG" src = "image/Day.jpg"/>
 		<header>
 			<div align = "center">
-				<img src = "image/Me.png" width = 80px height = 80px alt = "Me"/>
+				<img src = "image/Me.png" width = 65px height = 65px alt = "Me"/>
 				<span> Aecie's Nest </span>
 			</div>
 			<div class = "red" align = "right"> academy | romanticism | documentary | childhood &nbsp &nbsp &nbsp</div>
 		</header><hr>
 		
 		<article>
-			<div style = "">
-				
+		
 			</div>
 			<div style = "background-color: rgba(0,0,0,0.5)">
 				<p style = "color: white; font-size: 30px;"> &nbsp Assignment List </p>
@@ -44,9 +50,9 @@
 				<p> <a href = "chapter03_project02.html" style = "color: white; text-decoration: none"> &nbsp Chapter03 project02 </a> </p>
 				<p> &nbsp </p>
 			</div>
-		</article><hr>
+		</article>
 		
-		<footer style = "width: 100%; position: fixed left: 0; bottom: 0; color: white">
+		<footer style = "width: 100%; position: fixed left: 0; bottom: 0; color: white; position: absolute; bottom: 0;"> <hr>
 			<i> <small> Copyright &copy Aecie.github.io </small> </i>
 		</footer>
 		
