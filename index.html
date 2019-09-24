@@ -2,60 +2,121 @@
 <html>
 	<head> <title> Aecie IAD Project </title> </head>
 	<style>
-		header {
-			background-color: rgba(0, 0, 0, 0.5);
+		.list #sublist{
+			display: none;
+			position: absolute;
+			background-color: rgba(226, 159, 210, 0.9);
+			width: 100%;
+			top: 100%;
+			font-size: 10px;
+			text-align: center;
+		}
+		
+		.list:hover #sublist{
+			display: block;
+		}
+
+		body{
+			background: url("image/DayBG.jpg") no-repeat;
+			background-size: 100% 100%;
+			width: 100%;
+			background-attachment: fixed;
+		}
+		.title{
+			text-decoration: none;
 			color: white;
 		}
-		header div span {
-			font-size: 80px;
-			font-weight: bold;
-		}
-		.red{
-			color: rgb(226, 159, 210);
-		}
-		
-		p strong {
-			font-size: 30px;
-		}
-		#JPG{
-			position: absolute;
-			left: 15%;
-			width: 70%;
-			height:100%;
-			z-index: -1;
-		}
 	</style>
-	<body style = "background: url('image/DayBG.jpg') no-repeat;
-				   background-size: 100% 100%;
-				   width: 100%; height: 100%;
-				   background-attachment: fixed;">
-
-		<img id = "JPG" src = "image/Day.jpg"/>
-		<header>
-			<div align = "center">
-				<img src = "image/Me.png" width = 65px height = 65px alt = "Me"/>
-				<span> Aecie's Nest </span>
+	
+	<body>
+		<audio src = "appendix/bgm.mp3" loop = "loop" autoplay = "autoplay" >Not support on the browser</audio>
+		<header style = "background-color: rgba(226, 159, 210, 0.9);
+			width: 100%;
+			height: 10%;
+			position: absolute;
+			left: 0;
+			top: 0;">
+			<img src = "image/name.png" width = "10%" style = "font-family: Geogia, Fantacy, serif;
+				font-size: 24px; color: white; font-weight: bold;
+				position: absolute; left: 1%; top: 1%"/>
+			
+			<div>
+				
+				<div class = "list" style = "position: absolute; right: 37%; top: 70%;"> 
+					<a class = "title" href = "index.html">HOME</a> 
+				</div>
+				
+				<div class = "list" style = "position: absolute; right: 30%; top: 70%;"> 
+					<a class = "title" href = "#">ABOUT</a> 
+				</div>
+				
+				<div class = "list" style = "position: absolute; right: 23%; top: 70%;"> 
+					<a class = "title" href = "#">SKILLS</a> 
+				</div>
+				
+				<div class = "list" style = "position: absolute; right: 15%; top: 70%;"> 
+					<a class = "title" href = "chapter03_project02.html">CONTACT</a> 
+				</div>
+				
+				<div class = "list" style = "position: absolute; right: 8%; top: 70%;"> 
+					<a class = "title" href = "#">PROJECTS</a> 
+					<div id = "sublist">
+						<a href = "chapter02_project01.html" style = "color: white; text-decoration: none"> Chapter02 project01 </a> <hr>
+						<a href = "chapter02_project02.html" style = "color: white; text-decoration: none"> Chapter02 project02 </a> <hr>
+						<a href = "chapter03_project01.html" style = "color: white; text-decoration: none"> Chapter03 project01 </a> <hr>
+						<a href = "chapter03_project02.html" style = "color: white; text-decoration: none"> Chapter03 project02 </a> <br/>&nbsp
+					</div>
+				</div>
+				
+				<div class = "list" style = "position: absolute; right: 1%; top: 70%;"> 
+					<a class = "title" href = "#">EXPERIENCE</a> 
+					<div id = "sublist">
+						<img src = "image/prc.jpg" width = "60" height = "40"/> <hr>
+						<img src = "image/jp.jpg" width = "60" height = "40"/> <hr>
+						<img src = "image/mly.jpg" width = "60" height = "40"/> <hr>
+						<img src = "image/usa.jpg" width = "60" height = "40"/> <hr>
+					</div>
+				</div>
+				
+				
 			</div>
-			<div class = "red" align = "right"> academy | romanticism | documentary | childhood &nbsp &nbsp &nbsp</div>
-		</header><hr>
 		
-		<article>
-		
+			<div class = "socialPlatform" style = "position: absolute;
+				left: 1%; top: 70%;">
+				&nbsp &nbsp <img src = "image/wechat_icon.png" alt = "contact me with line" width = "20px" height = "20px" />
+				&nbsp &nbsp <img src = "image/instagram_icon.png" alt = "contact me with line" width = "20px" height = "20px" />
+				&nbsp &nbsp <img src = "image/facebook_icon.png" alt = "contact me with line" width = "20px" height = "20px" />
+				&nbsp &nbsp <img src = "image/line_icon.png" alt = "contact me with line" width = "20px" height = "20px" />
 			</div>
-			<div style = "background-color: rgba(0,0,0,0.5)">
-				<p style = "color: white; font-size: 30px;"> &nbsp Assignment List </p>
-				<p> <a href = "chapter02_project01.html" style = "color: white; text-decoration: none"> &nbsp Chapter02 project01 </a> </p>
-				<p> <a href = "chapter02_project02.html" style = "color: white; text-decoration: none"> &nbsp Chapter02 project02 </a> </p>
-				<p> <a href = "chapter03_project01.html" style = "color: white; text-decoration: none"> &nbsp Chapter03 project01 </a> </p>
-				<p> <a href = "chapter03_project02.html" style = "color: white; text-decoration: none"> &nbsp Chapter03 project02 </a> </p>
-				<p> &nbsp </p>
+		</header>
+		
+		<article style = "background-color: rgba(226, 159, 210, 0.9);
+			position: absolute; top: 15%; bottom: 10%; left: 0; width: 15%;">
+			&nbsp <br/>
+			<img src = "image/Me_Origin.png" width = "72%"  style = "border-radius: 50%; position: relative; left: 14%"/>
+			
+			<div align = "left" style = "position: absolute; left: 5%;">
+				<span style = "font-weight: bold"> Host Name </span> &nbsp Aecie Lee <br/>
+				<span style = "font-weight: bold"> Profession </span> &nbsp Student <br/>
+				<span style = "font-weight: bold"> Nationality </span> &nbsp <img src = "image/prc.jpg" width = "30" height = "20" align = "top"/> PRC <br/>
+				<span style = "font-weight: bold"> Preference </span> &nbsp HTx, spicy food and anime <br/>
+				<span style = "font-weight: bold"> Brief Intro </span> &nbsp Welcome to Aecie's nest!, 
+				a home for Aecie's study and work space. Here I am going to put something interesting and
+				related to my subject on the website, generally including programs and codes, and some
+				art works,  and sometimes easter eggs. Hope you luckily find treasure trove. The most 
+				part of the site is under construction, and corresponding hyper reference may be empty.
 			</div>
 		</article>
 		
-		<footer style = "width: 100%; position: fixed left: 0; bottom: 0; color: white; position: absolute; bottom: 0;"> <hr>
-			<i> <small> Copyright &copy Aecie.github.io </small> </i>
+		<footer style = "background-color: rgba(226, 159, 210, 0.9);
+			width: 100%;
+			height: 5%;
+			position: absolute;
+			left: 0;
+			bottom: 0;">
+			<i> <small style = "color: white;
+				position: absolute; top: 1%; left: 1%;"> Copyright &copy 2019 Aecie Lee </small> </i>
 		</footer>
-		
 		
 	</body>
 </html>
