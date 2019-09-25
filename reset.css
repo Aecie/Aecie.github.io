@@ -1,0 +1,60 @@
+header, footer div{
+	background-color: #3D6271;
+	color: white;
+	margin: 0em 4em 0.5em 4em;
+}
+
+header h1, header small a, footer div p small, footer div{
+	color: white;
+}
+
+#ref{
+	background-color: rgb(114,140,152);
+}
+
+#ref h4 a, footer div a{
+	color: #00FFFF;
+	margin: 0em 0em 0em 3em;
+}
+
+h1{
+	font-family: serif, Fantasy;
+	font-size: 50px;
+	font-weight: 200;
+	margin: 0em auto 0em 1em;
+	}
+h4 a:hover{
+	font-size: 105%;
+}
+
+small a{
+	text-decoration: none;
+}
+
+li h4 a{
+	text-decoration: none;
+}
+
+.titleToPicture, p small{
+	color: #808080;
+	font-style: italic;
+}
+
+article h3 a, article p, article div h3 a, article h4, footer div p{
+	margin: auto 1em;
+}
+
+article{
+	margin: 0em 4em 0.5em 4em;
+	background-color: white;
+}
+
+article #share{
+	background: linear-gradient(to bottom, #FFFFFF, #808080);
+	border: 1px solid #4B4B4B;
+	border-radius: 5px;
+}
+
+#review{
+	font-weight: normal;
+}
