@@ -8,7 +8,7 @@
 }
 
 #midH{
-	background-color: red;
+	background-color: #EE3F4D;
 	font-size: 60px;
 	font-weight: bold;
 	color: white;
@@ -25,13 +25,13 @@
 }
 
 #topic{
-	background-color: red;
+	background-color: #EE3F4D;
 	font-size: 30px;
 	color: white;
 }
 
 #contents{
-	border: 2px solid red;
+	border: 2px solid #EE3F4D;
 }
 
 #contents span{
@@ -45,7 +45,7 @@
 }
 
 #end{
-	background-color: red;
+	background-color: #EE3F4D;
 	height: 25px;
 }
 
