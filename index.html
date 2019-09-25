@@ -15,16 +15,40 @@
 		.list:hover #sublist{
 			display: block;
 		}
-
+		
+		.about #subAbout{
+			display: none;
+			position: absolute;
+			background-color: rgba(226, 159, 210, 0.6);
+			border-color: rgba(226, 159, 210, 1);
+			border-width: 3px;
+			border-radius: 2%;
+			border-style: dashed;
+			color: white;
+			width: 2000%;
+			top: 500%;
+			right: -500%;
+			font-size: 24px;
+			transition: all 2.5s ease-in-out;
+		}
+		
+		.about:hover #subAbout{
+			display: block;	
+		}
+		
 		body{
 			background: url("image/DayBG.jpg") no-repeat;
+			background-position: absolute;
 			background-size: 100% 100%;
-			width: 100%;
 			background-attachment: fixed;
 		}
 		.title{
 			text-decoration: none;
 			color: white;
+		}
+		.title:hover {
+			color: rgba(226, 159, 210, 0.9);
+			background-color: white;
 		}
 	</style>
 	
@@ -46,8 +70,26 @@
 					<a class = "title" href = "index.html">HOME</a> 
 				</div>
 				
-				<div class = "list" style = "position: absolute; right: 30%; top: 70%;"> 
+				<div class = "about" style = "position: absolute; right: 30%; top: 70%;"> 
 					<a class = "title" href = "#">ABOUT</a> 
+					<div id = "subAbout">
+						&nbsp &nbsp Welcome to Aecie's nest!, a home for Aecie's study and work space. Here I am going to put something interesting and
+						related to my subject on the website, generally including programs and codes, and some art works,  and sometimes 
+						easter eggs. Hope you luckily find treasure trove. The most part of the site is under construction, and corresponding 
+						hyper reference may be empty.<br/>
+						&nbsp &nbsp blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahh
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+						 blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+					</div>
 				</div>
 				
 				<div class = "list" style = "position: absolute; right: 23%; top: 70%;"> 
