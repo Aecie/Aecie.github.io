@@ -1,0 +1,15 @@
+
+Exposing HTML and JSON from the same Spark service
+http://sparkjava.com/tutorials/json-and-html-from-same-endpoints
+
+Using Axios to Consume APIs
+https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html
+
+axios: Promise based HTTP client for the browser and node.js
+https://github.com/axios/axios
+
+Axios易用、简洁且高效的http库
+http://www.axios-js.com/
+
+Let's build Type Ahead Component with VueJS 2 and Fetch API
+https://scotch.io/@bedakb/lets-build-type-ahead-component-with-vuejs-2-and-fetch-api

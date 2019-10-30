@@ -1,0 +1,74 @@
+	<!--  -->
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <title>Aecie Map Based on Amap</title>
+    <script href = "#vue-js" type="text/javascript" src = "https://cdn.staticfile.org/vue/2.4.2/vue.min.js" ></script>
+    
+</head>
+<body>
+	<div id = "container" style = "border:#ccc solid 5px; position: absolute; right: 0%; top: 0%; bottom: 0%; left: 380px;"></div>
+
+
+	<div id = "object" style = "background-color: rgb(66, 133, 244); position: absolute; top: 0; left: 0; bottom: 0%; width: 380px;">
+		<!-- Title -->
+		<h1 style = "color: white; text-align: center; font-size: 30px; position: relative; top: 20px;">{{title}}</h1>
+		<!-- Search -->
+		<div style = "background-color: rgb(51, 103, 214); position: absolute; width: 304px; height: 40px; left: 38px; border-radius: 5px; top: 120px;" >
+			<h1 style = "color: white; position: relative; left: 15px; top: -5px; font-weight: normal; font-size: 20px"> {{query}} </h1>
+			
+			<input id = "cityName" type="text" value = "where to go" style="position: relative; width:170px; top: -45px; left:90px; color: white; font-size: 17px; border-bottom: white 1px solid; border-top-style: none; border-right-style: none; border-left-style: none; background-color: transparent;">
+
+			<img src = "image/search.png" width = "20" height = "20" onclick = "theLocation()" style = "cursor: pointer; position: relative; top: -40px; left: 100px;">
+		</div>
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src = "https://webapi.amap.com/maps?v=1.4.15&key=e2e68eab936d7ea94a46b36a9286e188"></script>
+	<script>
+	var map = new AMap.Map('container', {
+		resizeEnable: true,
+		zoom: 10,
+		center: [116.397428, 39.90923]
+	});
+
+	map.on("complete", function(){
+		log.success("地图加载完成！");
+	});
+
+	</script>
+</body>
+
+<script name = "vue-js" type="text/javascript">
+	var vm = new Vue({
+		el: '#object',
+		data: {
+			title: "Aecie Map of Info",
+			query: "Search:",
+		},
+	})
+</script>
+
+</html>
