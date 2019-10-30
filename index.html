@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8">
+		<title> Aecie IAD Project </title> 
+		<script type="text/javascript" src = "JQuery.js"></script>
+	</head>
+	<style>
+		body{
+			background: url("project1/image/DayBG.jpg") no-repeat;
+			background-position: absolute;
+			background-size: 100% 100%;
+			background-attachment: fixed;
+		}
+		.title{
+			text-decoration: none;
+			color: white;
+			cursor: pointer;
+			text-align: center;
+			font-size: 20px;
+			position: absolute;
+			width: 14.2857%;
+			bottom: 0px;
+			/*background-color: rgba(226, 159, 210, 0.9);*/
+		}
+		.title:hover {
+			color: rgba(226, 159, 210, 0.9);
+			background-color: white;
+		}
+		.table{
+			color: white;
+			display: none;
+			position: absolute;
+			border-width: 3px;
+			border-radius: 10px;
+			border-style: dashed;
+			border-color: rgba(226, 159, 210, 1);
+			background-color: rgba(226, 159, 210, 0.6);
+		}
+		.table a{
+			color: white;
+			position: absolute;
+			left: 5%; top: 10%;
+			text-decoration: none;
+		}
+		/*.fontSetting{
+			font-family: "fantasy", "华文彩云", "serif"; 
+			font-size: 70px; color: white; font-weight: bold;
+			position: absolute; left: 1%; top: 1%
+		}*/
+	</style>
+	
+	<body>
+		<audio src="project1/appendix/bgm.mp3" loop="loop" autoplay="autoplay" >Not support on the browser</audio>
+		<header style="background-color: rgba(226, 159, 210, 0.9); width: 100%; height: 15%; position: absolute; left: 0;	top: 0;">
+			<!-- <div class = "fontSetting"> Aecie's Nest </div> -->
+			<img src="project1/image/Name.png" style="position: absolute; width: 400px; left: 0; top: 0;">
+			<div>
+				<div class="title" onclick="window.location.reload()" style="left: 0;">HOME</div> 
+			
+				<div class="title" id="about" style="left: 14.2857%;">ABOUT</div> 
+		
+				<div class="title" style="left: 28.5714%;">SKILLS</div> 
+	
+				<div class="title" style="left: 42.8571%;">CONTACT</div> 
+
+				<div class="title" id="projects" style="right: 28.5714%;">PROJECTS</div> 
+																										   
+				<div class="title" id="experience" style="right: 14.2857%;">EXPERIENCE</div>
+
+				<div class="title" style="right: 0;">MASTERPIECE</div>
+			</div>
+		</header>
+		
+		<article id = "intro" style = "background-color: rgba(226, 159, 210, 0.9); position: absolute; top: 15%; bottom: 5%; left: 0; width: 300px; display: none;">
+			&nbsp <br/>
+			<img src = "project1/image/Me_Origin.png" width = "72%"  style = "border-radius: 50%; position: relative; left: 14%"/>
+			
+			<div align = "left" style = "position: absolute; left: 5%;">
+				<span style = "font-weight: bold"> Host Name </span> &nbsp Aecie Lee <br/>
+				<span style = "font-weight: bold"> Profession </span> &nbsp Student <br/>
+				<span style = "font-weight: bold"> Nationality </span> &nbsp <img src = "project1/image/prc.jpg" width = "30" height = "20" align = "top"/> PRC <br/>
+				<span style = "font-weight: bold"> Preference </span> &nbsp HTx, spicy food and anime <br/>
+				<span style = "font-weight: bold"> Brief Intro </span> &nbsp Welcome to Aecie's nest!, 
+				a home for Aecie's study and work space. Here I am going to put something interesting and
+				related to my subject on the website, generally including programs and codes, and some
+				art works,  and sometimes easter eggs. Hope you luckily find treasure trove. The most 
+				part of the site is under construction, and corresponding hyper reference may be empty.
+			</div>
+			
+			<div class = "socialPlatform" style = "position: absolute; right: 1%; bottom: 1%;">
+				&nbsp &nbsp <img src = "project1/image/wechat_icon.png" alt = "contact me with line" width = "20px" height = "20px" title = "微信" />
+				&nbsp &nbsp <img src = "project1/image/instagram_icon.png" alt = "contact me with line" width = "20px" height = "20px" title = "Instagram" />
+				&nbsp &nbsp <img src = "project1/image/facebook_icon.png" alt = "contact me with line" width = "20px" height = "20px" title = "Facebook" />
+				&nbsp &nbsp <img src = "project1/image/line_icon.png" alt = "contact me with line" width = "20px" height = "20px" title = "Line" />
+			</div>
+		</article>
+		
+		<article>
+			<div class = "table" id = "intro2" style = "width: 50%; margin-left: 500px; font-size: 18px; top: 20%; bottom: 10%; z-index: 1;">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</article>
+
+		<article>
+			<div class = "table" id = "c2p1" style = "right: 28.5714%; top: 16%; width: 13%; height: 3%;">
+				<a href = "project1/chapter02_project01.html"> IAD Chapter02 Project01 </a>
+			</div>
+			<div class = "table" id = "c2p2" style = "right: 28.5714%; top: 20%; width: 13%; height: 3%;">
+				<a href = "project1/chapter02_project02.html"> IAD Chapter02 Project02 </a>
+			</div>
+			<div class = "table" id = "c3p1" style = "right: 28.5714%; top: 24%; width: 13%; height: 3%;">
+				<a href = "project1/chapter03_project01.html"> IAD Chapter03 Project01 </a>
+			</div>
+			<div class = "table" id = "c3p2" style = "right: 28.5714%; top: 28%; width: 13%; height: 3%;">
+				<a href = "project1/chapter03_project02.html"> IAD Chapter03 Project02 </a>
+			</div>
+			<div class = "table" id = "map" style = "right: 28.5714%; top: 32%; width: 13%; height: 3%;">
+				<a href = "project2/Baidumap.html"> Map Based on Baidu </a>
+			</div>						
+		</article>
+
+		<article>
+			<div class="table" id="pictures" style="right: 14.2857%; top: 16%; width: 13%;"> <hr>
+				<img src = "project1/image/prc.jpg" width = "60" height = "40"> <hr>
+				<img src = "project1/image/jp.jpg" width = "60" height = "40"> <hr>
+				<img src = "project1/image/mly.jpg" width = "60" height = "40"> <hr>
+				<img src = "project1/image/usa.jpg" width = "60" height = "40"> <hr>
+			</div>
+		</article>
+
+
+
+
+		<footer style = "background-color: rgba(226, 159, 210, 0.9); width: 100%; height: 5%; position: absolute; left: 0; bottom: 0;">
+			<i> <small style = "color: white;
+				position: absolute; top: 1%; left: 1%;"> Copyright &copy 2019 Aecie Lee </small> </i>
+		</footer>
+		
+	</body>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#about").click(function(){
+				$("#intro").animate({
+					width: 'toggle'
+				});
+			});
+
+			$("#about").hover(function(){
+				$("#intro2").fadeToggle(1000);
+			});
+
+			$("#projects").click(function(){
+				$("#c2p1").fadeToggle(500);
+				$("#c2p2").fadeToggle(600);
+				$("#c3p1").fadeToggle(700);
+				$("#c3p2").fadeToggle(800);
+				$("#map").fadeToggle(900);
+			});
+
+			$("#experience").click(function(){
+				$("#pictures").fadeToggle(1000);
+			});
+		});
+
+
+
+	</script>
+</html>
