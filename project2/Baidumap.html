@@ -24,11 +24,14 @@
 			<img id = "Locate" src = "image/search.png" width = "20" height = "20" onclick = "theLocation()" style = "cursor: pointer; position: relative; top: -40px; left: 100px;">
 		</div>
 
-		<div id = "Info" style = "background-color: rgb(51, 103, 214); border-radius: 5px; position: absolute; top: 200px; left: 38px; width: 180px; height: 110px; display: none;">
+		<div id = "Info" style = "background-color: rgb(51, 103, 214); border-radius: 5px; position: absolute; top: 200px; left: 38px; width: 200px; height: 110px; display: none;">
 			<div id = "format" style = "color: white; position: relative; left: 20px; top: 10px;"></div>	
 		</div>
 		
-		
+		<div style = "background-color: rgb(51, 103, 214); position: absolute; width: 200px; height: 40px; left: 38px; bottom: 40px; border-radius: 5px;">
+			<img src="image/return.png" width="20" height="20" style = "position: absolute; left: 15px; top: 10px;">
+			<a href="../index.html" style = "position: absolute; left: 50px; top: 8px; text-decoration: none; color: white; font-size: 20px; font-weight: normal;"> Return Home </a>
+		</div>
 	</div>
 </body>
 	<script name = "map" type = "text/javascript">
@@ -78,9 +81,34 @@
 
 
 		function format(result){
+			var week = "";
+			switch(result.week){
+				case "星期一": week = "Monday"; break;
+				case "星期二": week = "Tuesday"; break;
+				case "星期三": week = "Wednesday"; break;
+				case "星期四": week = "Thursday"; break;
+				case "星期五": week = "Friday"; break;
+				case "星期六": week = "Saturday"; break;
+				default: week = "Sunday"; break;
+			}
+
+			var wea = "";
+			switch(result.wea_img){
+				case "bingbao": wea = "<img src=\"image/yu.png\" width=\"15\" height=\"15\" > hail"; break;
+				case "lei": wea = "<img src=\"image/lei.png\" width=\"15\" height=\"15\" > thunder"; break;
+				case "qing": wea = "<img src=\"image/qing.png\" width=\"15\" height=\"15\" > sunny"; break;
+				case "shachen": wea = "<img src=\"image/shachen.png\" width=\"15\" height=\"15\" > sandy"; break;
+				case "wu": wea = "<img src=\"image/wu.png\" width=\"15\" height=\"15\" > foggy"; break;
+				case "xue": wea = "<img src=\"image/xue.png\" width=\"15\" height=\"15\" > snowy"; break;
+				case "yin": wea = "<img src=\"image/yin.png\" width=\"15\" height=\"15\" > overcast"; break;
+				case "yu": wea = "<img src=\"image/yu.png\" width=\"15\" height=\"15\" > rainy"; break;
+				case "yujiaxue": wea = "<img src=\"image/yujiaxue.png\" width=\"15\" height=\"15\" > sleet"; break;
+				default: wea = "<img src=\"image/yun.png\" width=\"15\" height=\"15\" > cloudy"; break;
+			}
+
 			html = "Date: " + result.date + "</br>" +
-			"Day: " + result.week + "</br>" +
-			"Weather: " + result.wea + "</br>" + 
+			"Day: " + week + "</br>" +
+			"Weather: " + wea + "</br>" + 
 			result.tem2 + "~" + result.tem1;
 			$("#format").empty();
 			$("#format").append(html);
