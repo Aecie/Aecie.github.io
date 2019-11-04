@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<title>Aecie Map Based on Baidu</title>
 	<script type="text/javascript" src = "http://api.map.baidu.com/api?v=2.0&ak=Cq1UWYjYILQkz99rehq2Rsq7pkIxPDib"></script>
-	<script type="text/javascript" src = "https://cdn.staticfile.org/vue/2.4.2/vue.min.js" ></script>
 	<script type="text/javascript" src = "../JQuery.js" ></script>
 </head>
 <body>
@@ -23,12 +22,6 @@
 
 			<img id = "Locate" src = "image/search.png" width = "20" height = "20" onclick = "theLocation()" style = "cursor: pointer; position: relative; top: -40px; left: 100px;">
 		</div>
-
-		<div id = "Info" style = "background-color: rgb(51, 103, 214); border-radius: 5px; position: absolute; top: 200px; left: 38px; width: 180px; height: 110px; display: none;">
-			<div id = "format" style = "color: white; position: relative; left: 20px; top: 10px;"></div>	
-		</div>
-		
-		
 	</div>
 </body>
 	<script name = "map" type = "text/javascript">
@@ -71,63 +64,10 @@
 
 			}
 
-			getCityById(city);
+// 			getCityById(city);
 		//	console.log("weatherData: "+weatherData);
 		//	console.log();
 		}
 
-
-		function format(result){
-			html = "Date: " + result.date + "</br>" +
-			"Day: " + result.week + "</br>" +
-			"Weather: " + result.wea + "</br>" + 
-			result.tem2 + "~" + result.tem1;
-			$("#format").empty();
-			$("#format").append(html);
-		}
-
-		function request(cityId){
-			$.ajax({
-		        type: 'GET',
-		        url: 'https://www.tianqiapi.com/api/',
-		        //url: 'http://api.wunderground.com',
-		        data: 'version=v1&cityid='+cityId+'&appid=[75248442]&appsecret=[qMnlL1Fj]',
-		        dataType: 'JSON',
-		        error: function () {
-		            alert('网络错误');
-		        },
-		        success: function (res) {
-		            console.log(res.data[1]);
-		            format(res.data[1]);
-		            // weatherData = res.data[1].date;
-		            // console.log("Data: "+weatherData)
-		            
-		        }
-	      	});
-		}
-		
-
-		function getCityById(cityName){
-			$.getJSON('https://yiyingcanfeng.github.io/data/2019-03-13-cn_weather_citylist.json', function (res) {
-		        for (var i = 0; i < res.length; i++) {
-		        	if (res[i].cityName === cityName) {
-
-		        		console.log("cityName: "+res[i].cityCode)
-		            	request(res[i].cityCode);
-		        	}
-		        }
-	     	})
-		}
 	</script>
-
-	<!-- <script name = "vue-js" type="text/javascript">
-		var vm = new Vue({
-			el: '#object',
-			data: {
-				title: "Aecie Map of Info",
-				query: "Locate:",
-
-			},
-		})
-	</script> -->
 </html>
