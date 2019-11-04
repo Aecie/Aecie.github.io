@@ -25,11 +25,11 @@
 	</div>
 </body>
 	<script name = "map" type = "text/javascript">
-		"use strict";
+// 		"use strict";
 		var map = new BMap.Map("ac_map");
 		var point = new BMap.Point(116.331398,39.897445);
 		// var weatherData = null;
-		var html = "";
+		//var html = "";
 
 		map.centerAndZoom(point,13);
 		
@@ -42,28 +42,26 @@
 		map.addControl(new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 0}));
 		map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT}));
 
-		function myLoc(result){
-			var cityName = result.name;
-			map.setCenter(cityName);
-			alert("Now you are located in " + cityName);
-		}
+// 		function myLoc(result){
+// 			var cityName = result.name;
+// 			map.setCenter(cityName);
+// 			alert("Now you are located in " + cityName);
+// 		}
 
-		var myCity = new BMap.LocalCity();
-		myCity.get(myLoc);
+// 		var myCity = new BMap.LocalCity();
+// 		myCity.get(myLoc);
 
-		$(document).ready(function(){
-			$("#Locate").click(function(){
-				$("#Info").fadeIn();
-			});
-		});
+// 		$(document).ready(function(){
+// 			$("#Locate").click(function(){
+// 				$("#Info").fadeIn();
+// 			});
+// 		});
 
 		function theLocation(){
 			var city = $("#cityName").val();
 			if(city != ""){
 				map.centerAndZoom(city,11);      // 用城市名设置地图中心点
-
 			}
-
 // 			getCityById(city);
 		//	console.log("weatherData: "+weatherData);
 		//	console.log();
