@@ -4,8 +4,21 @@
 	<meta charset="utf-8">
 	<title>Aecie Map Based on Baidu</title>
 	<script type="text/javascript" src = "//api.map.baidu.com/api?v=2.0&ak=Cq1UWYjYILQkz99rehq2Rsq7pkIxPDib"></script>
-	<script type="text/javascript" src = "https://cdn.staticfile.org/vue/2.4.2/vue.min.js" ></script>
 	<script type="text/javascript" src = "../JQuery.js" ></script>
+	<style type="text/css">
+		button{
+			position: relative;
+			top: 10px;
+			left: 20px;
+			color: white;
+			background-color: transparent;
+			border: 0;
+			cursor: pointer;
+			font-size: 20px;
+			display: inline-block;
+			margin: auto;
+		}
+	</style>
 </head>
 <body>
 	<!-- Maps Generation -->
@@ -14,9 +27,9 @@
 	<!-- Direction -->
 	<div id = "object" style = "background-color: rgb(66, 133, 244); position: absolute; top: 0; left: 0; bottom: 0%; width: 380px;">
 		<!-- Title -->
-		<h1 style = "color: white; text-align: center; font-size: 30px; position: relative; top: 20px;">Aecie Map of Info</h1>
+		<h1 style = "color: white; text-align: center; font-size: 30px; position: relative; top: 20px;">Aecie Weather Map</h1>
 		<!-- Search -->
-		<div style = "background-color: rgb(51, 103, 214); position: absolute; width: 304px; height: 40px; left: 38px; border-radius: 5px; top: 120px;" >
+		<div style = "background-color: rgb(51, 103, 214); position: absolute; width: 304px; height: 40px; left: 38px; border-radius: 5px; top: 120px;">
 			<h1 style = "color: white; position: relative; left: 15px; top: -5px; font-weight: normal; font-size: 20px"> Locate: </h1>
 			
 			<input id = "cityName" type="text" value = "where to go" style="position: relative; width:170px; top: -45px; left:90px; color: white; font-size: 17px; border-bottom: white 1px solid; border-top-style: none; border-right-style: none; border-left-style: none; background-color: transparent;">
@@ -24,30 +37,38 @@
 			<img id = "Locate" src = "image/search.png" width = "20" height = "20" onclick = "theLocation()" style = "cursor: pointer; position: relative; top: -40px; left: 100px;">
 		</div>
 
-		<div id = "Info" style = "background-color: rgb(51, 103, 214); border-radius: 5px; position: absolute; top: 200px; left: 38px; width: 200px; height: 105px; display: none;">
-			<div id = "format" style = "color: white; position: relative; left: 20px; top: 10px;"></div>	
+		<!-- information frame -->
+		<div id = "image" style = "background-color: rgb(51, 103, 214); border-radius: 5px; position: absolute; top: 200px; left: 38px; width: 304px; height: 200px; text-align: center; display: none;">
 		</div>
 		
+		<div id = "Info" style = "background-color: rgb(51, 103, 214); border-radius: 5px; position: absolute; top: 440px; left: 38px; width: 304px; height: 300px; display: none;">
+			<button id="now" onclick="getData('now', 0, cityName())">Now</button>
+			<button id="Tomorrow" onclick="getData('forecast', 1, cityName())">Tomorrow</button>
+			<button id="Acquired" onclick="getData('forecast', 2, cityName())">Acquired</button>
+			<div id = "format" style = "color: white; position: relative; left: 20px; top: 40px;"></div>	
+		</div>
+		
+		<!-- return home -->
 		<div style = "background-color: rgb(51, 103, 214); position: absolute; width: 200px; height: 40px; left: 38px; bottom: 40px; border-radius: 5px;">
 			<img src="image/return.png" width="20" height="20" style = "position: absolute; left: 15px; top: 10px;">
 			<a href="../index.html" style = "position: absolute; left: 50px; top: 8px; text-decoration: none; color: white; font-size: 20px; font-weight: normal;"> Return Home </a>
 		</div>
+
+
 	</div>
 </body>
 	<script name = "map" type = "text/javascript">
-		"use strict";
+		// Map API
 		var map = new BMap.Map("ac_map");
 		var point = new BMap.Point(116.331398,39.897445);
-		// var weatherData = null;
-		var html = "";
 
 		map.centerAndZoom(point,13);
-		
+				
 		map.enableDragging();
 		map.enableScrollWheelZoom();
 		map.enableDoubleClickZoom();
 		map.enableKeyboard();
-		
+				
 		map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE}));
 		map.addControl(new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 0}));
 		map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT}));
@@ -57,105 +78,109 @@
 			map.setCenter(cityName);
 			alert("Now you are located in " + cityName);
 		}
-
 		var myCity = new BMap.LocalCity();
 		myCity.get(myLoc);
 
-		$(document).ready(function(){
-			$("#Locate").click(function(){
-				$("#Info").fadeIn();
-			});
-		});
-
 		function theLocation(){
-			var city = $("#cityName").val();
+			var city = cityName();
 			if(city != ""){
-				map.centerAndZoom(city,11);      // 用城市名设置地图中心点
-
+				map.centerAndZoom(city,11);
 			}
 
-			getCityById(city);
-		//	console.log("weatherData: "+weatherData);
-		//	console.log();
+			getData('now', 0, city);
+		}
+		function cityName(){
+			return $("#cityName").val();
 		}
 
-
-		function format(result){
-			var week = "";
-			switch(result.week){
-				case "星期一": week = "Monday"; break;
-				case "星期二": week = "Tuesday"; break;
-				case "星期三": week = "Wednesday"; break;
-				case "星期四": week = "Thursday"; break;
-				case "星期五": week = "Friday"; break;
-				case "星期六": week = "Saturday"; break;
-				default: week = "Sunday"; break;
-			}
-
-			var wea = "";
-			switch(result.wea_img){
-				case "bingbao": wea = "<img src=\"image/yu.png\" width=\"15\" height=\"15\" > hail"; break;
-				case "lei": wea = "<img src=\"image/lei.png\" width=\"15\" height=\"15\" > thunder"; break;
-				case "qing": wea = "<img src=\"image/qing.png\" width=\"15\" height=\"15\" > sunny"; break;
-				case "shachen": wea = "<img src=\"image/shachen.png\" width=\"15\" height=\"15\" > sandy"; break;
-				case "wu": wea = "<img src=\"image/wu.png\" width=\"15\" height=\"15\" > foggy"; break;
-				case "xue": wea = "<img src=\"image/xue.png\" width=\"15\" height=\"15\" > snowy"; break;
-				case "yin": wea = "<img src=\"image/yin.png\" width=\"15\" height=\"15\" > overcast"; break;
-				case "yu": wea = "<img src=\"image/yu.png\" width=\"15\" height=\"15\" > rainy"; break;
-				case "yujiaxue": wea = "<img src=\"image/yujiaxue.png\" width=\"15\" height=\"15\" > sleet"; break;
-				default: wea = "<img src=\"image/yun.png\" width=\"15\" height=\"15\" > cloudy"; break;
-			}
-
-			html = "Date: " + result.date + "</br>" +
-			"Day: " + week + "</br>" +
-			"Weather: " + wea + "</br>" + 
-			result.tem2 + "~" + result.tem1;
-			$("#format").empty();
-			$("#format").append(html);
-		}
-
-		function request(cityId){
+		//HeWeather
+		function getData(type, num, location){
 			$.ajax({
-		        type: 'GET',
-		        url: 'https://www.tianqiapi.com/api/',
-		        //url: 'http://api.wunderground.com',
-		        data: 'version=v1&cityid='+cityId+'&appid=[75248442]&appsecret=[qMnlL1Fj]',
-		        dataType: 'JSON',
-		        error: function () {
-		            alert('网络错误');
-		        },
-		        success: function (res) {
-		            console.log(res.data[0]);
-		            format(res.data[0]);
-		            // weatherData = res.data[1].date;
-		            // console.log("Data: "+weatherData)
-		            
-		        }
-	      	});
+				type: 'GET',
+				url: 'https://free-api.heweather.net/s6/weather/'+type+'?',
+				data: 'key=18a60ead4caa4d4f89059dc3e2895cf4	&location='+location+'&lang=en&username=HE1911250915131178',
+				dataType: 'JSON',
+				error: function(){
+					alert('Network error!');
+				},
+				success: function(response){
+					console.log(response);
+					if(type == 'now')
+						htmlCurrentData(type, response.HeWeather6[0].now);
+					else if(type == 'forecast')
+						htmlCurrentData(type, response.HeWeather6[0].daily_forecast[num]);
+				}
+			});
 		}
-		
 
-		function getCityById(cityName){
-			$.getJSON('https://yiyingcanfeng.github.io/data/2019-03-13-cn_weather_citylist.json', function (res) {
-		        for (var i = 0; i < res.length; i++) {
-		        	if (res[i].cityName === cityName) {
+		function htmlCurrentData(type, response){
+			if(type == 'now'){
+				var html = "<img src=\"image/attributes/weather.png\" width=\"15\" height=\"15\">  Weather: " + response.cond_txt + "</br>" +
+				"<img src=\"image/attributes/temp.png\" width=\"15\" height=\"15\">  Temperature: " + response.tmp + "℃</br>" +
+				"<img src=\"image/attributes/feeling.png\" width=\"15\" height=\"15\">  Feeling: " + response.fl + "℃</br>" +
+				"<img src=\"image/attributes/humidity.png\" width=\"15\" height=\"15\">  Humidity: " + response.hum + "%</br>" +
+				"<img src=\"image/attributes/press.png\" width=\"15\" height=\"15\">  Press: " + response.pres + "</br>" +
+				"<img src=\"image/attributes/precipitation.png\" width=\"15\" height=\"15\">  Precipitation: " + response.pcpn + "</br>" +
+				"<img src=\"image/attributes/visibility.png\" width=\"15\" height=\"15\">  Visibility: " + response.vis + "km</br>" +
+				"<img src=\"image/attributes/dir.png\" width=\"15\" height=\"15\">  Wind Direction: " + response.wind_dir + "</br>" +
+				"<img src=\"image/attributes/spd.png\" width=\"15\" height=\"15\">  Wind Speed: " + response.wind_spd + "km/h</br>";
 
-		        		console.log("cityName: "+res[i].cityCode)
-		            	request(res[i].cityCode);
-		        	}
-		        }
-	     	})
+				$("#image").empty();
+				$("#image").fadeIn();
+				$("#Info").fadeIn();
+				$("button").fadeIn();
+				$("#format").empty();
+				$("#image").append(
+					codeToImg(1, response.cond_code) + 
+					"<div style=\"color: white; font-weight: bold;\">Now</div>"
+					);
+				$("#format").append(html);
+			}
+
+			else if(type == 'forecast'){
+				var html = "<img src=\"image/attributes/date.png\" width=\"15\" height=\"15\">  Date: " + response.date + "</br>" +
+				"<img src=\"image/attributes/day.png\" width=\"15\" height=\"15\">  Day Weather: " + response.cond_txt_d + "</br>" +
+				"<img src=\"image/attributes/night.png\" width=\"15\" height=\"15\">  Night Weather: " + response.cond_txt_n + "</br>" +
+				"<img src=\"image/attributes/humidity.png\" width=\"15\" height=\"15\">  Humidity: " + response.hum + "%</br>" +
+				"<img src=\"image/attributes/press.png\" width=\"15\" height=\"15\">  Press: " + response.pres + "</br>" +
+				"<img src=\"image/attributes/precipitation.png\" width=\"15\" height=\"15\">  Precipitation: " + response.pcpn + "</br>" +
+				"<img src=\"image/attributes/visibility.png\" width=\"15\" height=\"15\">  Visibility: " + response.vis + "km</br>" +
+				"<img src=\"image/attributes/dir.png\" width=\"15\" height=\"15\">  Wind Direction: " + response.wind_dir + "</br>" +
+				"<img src=\"image/attributes/spd.png\" width=\"15\" height=\"15\">  Wind Speed: " + response.wind_spd + "km/h</br>" +
+				"<img src=\"image/attributes/uv.png\" width=\"15\" height=\"15\">  UV Index: " + response.uv_index + "</br>";
+
+				$("#image").empty();
+				$("#image").fadeIn();
+				$("#Info").fadeIn();
+				$("button").fadeIn();
+				$("#format").empty();
+				$("#image").append(
+					codeToImg(1, response.cond_code_d) + 
+					codeToImg(0, response.cond_code_n) +
+					"<div style=\"color: white; font-weight: bold; position: absolute; left: 65px;\">Day</div>" +
+					"<div style=\"color: white; font-weight: bold; position: absolute; right: 65px;\">Night</div>"
+					);
+				$("#format").append(html);
+			}
+
+			else{
+				$("#image").hide();
+				$("Info").hide();
+				$("button").hide();
+				$("#format").hide();
+			}
+		}
+
+		// 1 for day, 0 for night;
+		function codeToImg(num, code){
+			if(num == 1)
+				return "<img src=\"image/weathers/"+code+".png\" width=\"145\" height=\"145\">";
+			else{
+				if(code == "100" || code == "103" || code == "104" || code == "300" || code == "301" || code == "406" || code == "407")
+					return "<img src=\"image/weathers/"+code+"n.png\" width=\"145\" height=\"145\">";
+				else
+					return "<img src=\"image/weathers/"+code+".png\" width=\"145\" height=\"145\">";
+			}
 		}
 	</script>
-
-	<!-- <script name = "vue-js" type="text/javascript">
-		var vm = new Vue({
-			el: '#object',
-			data: {
-				title: "Aecie Map of Info",
-				query: "Locate:",
-
-			},
-		})
-	</script> -->
 </html>
