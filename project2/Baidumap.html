@@ -109,6 +109,10 @@
 					alert('Network error!');
 				},
 				success: function(response){
+					if(response.HeWeather6[0].status == "unknown location"){
+						alert("The location is undefined in weather API!");
+						return;
+					}
 					console.log(response);
 					if(type == 'now')
 						htmlCurrentData(type, response.HeWeather6[0].now);
