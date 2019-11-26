@@ -72,12 +72,12 @@
 		map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE}));
 		map.addControl(new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 0}));
 		map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT}));
-		
+
 		$("body").keydown(function(){
 			if(event.keyCode == "13")
 				$("#Locate").click();
 		});
-		
+
 		function myLoc(result){
 			var cityName = result.name;
 			map.setCenter(cityName);
@@ -109,11 +109,17 @@
 					alert('Network error!');
 				},
 				success: function(response){
+					console.log(response);
 					if(response.HeWeather6[0].status == "unknown location"){
+						$("#image").hide();
+						$("button").hide();
+						$("#format").hide();
+						$("#Info").hide();
+						
 						alert("The location is undefined in weather API!");
 						return;
 					}
-					console.log(response);
+
 					if(type == 'now')
 						htmlCurrentData(type, response.HeWeather6[0].now);
 					else if(type == 'forecast')
@@ -136,13 +142,14 @@
 
 				$("#image").empty();
 				$("#image").fadeIn();
-				$("#Info").fadeIn();
-				$("button").fadeIn();
-				$("#format").empty();
 				$("#image").append(
 					codeToImg(1, response.cond_code) + 
 					"<div style=\"color: white; font-weight: bold;\">Now</div>"
 					);
+				$("#Info").fadeIn();
+				$("button").fadeIn();
+				$("#format").empty();
+				$("#format").fadeIn();
 				$("#format").append(html);
 			}
 
@@ -160,21 +167,22 @@
 
 				$("#image").empty();
 				$("#image").fadeIn();
-				$("#Info").fadeIn();
-				$("button").fadeIn();
-				$("#format").empty();
 				$("#image").append(
 					codeToImg(1, response.cond_code_d) + 
 					codeToImg(0, response.cond_code_n) +
 					"<div style=\"color: white; font-weight: bold; position: absolute; left: 65px;\">Day</div>" +
 					"<div style=\"color: white; font-weight: bold; position: absolute; right: 65px;\">Night</div>"
 					);
+				$("#Info").fadeIn();
+				$("button").fadeIn();
+				$("#format").empty();
+				$("#format").fadeIn();
 				$("#format").append(html);
 			}
 
 			else{
 				$("#image").hide();
-				$("Info").hide();
+				$("#Info").hide();
 				$("button").hide();
 				$("#format").hide();
 			}
