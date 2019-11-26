@@ -97,6 +97,7 @@
 				var html = "<img src=\"image/attributes/date.png\" width=\"15\" height=\"15\">  Date: " + response.date + "</br>" +
 				"<img src=\"image/attributes/day.png\" width=\"15\" height=\"15\">  Day Weather: " + response.cond_txt_d + "</br>" +
 				"<img src=\"image/attributes/night.png\" width=\"15\" height=\"15\">  Night Weather: " + response.cond_txt_n + "</br>" +
+				"<img src=\"image/attributes/range.png\" width=\"15\" height=\"15\">  Temperature: " + response.tmp_min + "℃ ~ " + response.tmp_max + "℃</br>" +
 				"<img src=\"image/attributes/humidity.png\" width=\"15\" height=\"15\">  Humidity: " + response.hum + "%</br>" +
 				"<img src=\"image/attributes/press.png\" width=\"15\" height=\"15\">  Press: " + response.pres + "hPa</br>" +
 				"<img src=\"image/attributes/precipitation.png\" width=\"15\" height=\"15\">  Precipitation: " + response.pcpn + "mm</br>" +
