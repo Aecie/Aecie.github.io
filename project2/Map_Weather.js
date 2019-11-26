@@ -74,8 +74,8 @@
 				"<img src=\"image/attributes/temp.png\" width=\"15\" height=\"15\">  Temperature: " + response.tmp + "℃</br>" +
 				"<img src=\"image/attributes/feeling.png\" width=\"15\" height=\"15\">  Feeling: " + response.fl + "℃</br>" +
 				"<img src=\"image/attributes/humidity.png\" width=\"15\" height=\"15\">  Humidity: " + response.hum + "%</br>" +
-				"<img src=\"image/attributes/press.png\" width=\"15\" height=\"15\">  Press: " + response.pres + "</br>" +
-				"<img src=\"image/attributes/precipitation.png\" width=\"15\" height=\"15\">  Precipitation: " + response.pcpn + "</br>" +
+				"<img src=\"image/attributes/press.png\" width=\"15\" height=\"15\">  Press: " + response.pres + "hPa</br>" +
+				"<img src=\"image/attributes/precipitation.png\" width=\"15\" height=\"15\">  Precipitation: " + response.pcpn + "mm</br>" +
 				"<img src=\"image/attributes/visibility.png\" width=\"15\" height=\"15\">  Visibility: " + response.vis + "km</br>" +
 				"<img src=\"image/attributes/dir.png\" width=\"15\" height=\"15\">  Wind Direction: " + response.wind_dir + "</br>" +
 				"<img src=\"image/attributes/spd.png\" width=\"15\" height=\"15\">  Wind Speed: " + response.wind_spd + "km/h</br>";
@@ -98,8 +98,8 @@
 				"<img src=\"image/attributes/day.png\" width=\"15\" height=\"15\">  Day Weather: " + response.cond_txt_d + "</br>" +
 				"<img src=\"image/attributes/night.png\" width=\"15\" height=\"15\">  Night Weather: " + response.cond_txt_n + "</br>" +
 				"<img src=\"image/attributes/humidity.png\" width=\"15\" height=\"15\">  Humidity: " + response.hum + "%</br>" +
-				"<img src=\"image/attributes/press.png\" width=\"15\" height=\"15\">  Press: " + response.pres + "</br>" +
-				"<img src=\"image/attributes/precipitation.png\" width=\"15\" height=\"15\">  Precipitation: " + response.pcpn + "</br>" +
+				"<img src=\"image/attributes/press.png\" width=\"15\" height=\"15\">  Press: " + response.pres + "hPa</br>" +
+				"<img src=\"image/attributes/precipitation.png\" width=\"15\" height=\"15\">  Precipitation: " + response.pcpn + "mm</br>" +
 				"<img src=\"image/attributes/visibility.png\" width=\"15\" height=\"15\">  Visibility: " + response.vis + "km</br>" +
 				"<img src=\"image/attributes/dir.png\" width=\"15\" height=\"15\">  Wind Direction: " + response.wind_dir + "</br>" +
 				"<img src=\"image/attributes/spd.png\" width=\"15\" height=\"15\">  Wind Speed: " + response.wind_spd + "km/h</br>" +
