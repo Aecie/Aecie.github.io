@@ -1,0 +1,190 @@
+#back{
+	position: absolute;
+   	box-shadow: #666 0px 0px 10px;
+   	background: white;
+	width: 50%;
+	left: 25%;
+	top: 0;
+	bottom: 0;
+	z-index: -2;
+}
+
+.father{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: white;
+	z-index: -5;
+	display: flex;
+	align-items: center;
+}
+
+.bg1{
+	position: absolute;
+	width: 25%;
+	height: 60%;
+	z-index: -4;
+	left: 0;
+}
+
+.bg2{
+	position: absolute;
+	width: 25%;
+	height: 60%;
+	z-index: -4;
+	right: 0;
+}
+
+#headBar{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 15%;
+	width: 100%;
+	background-color: rgb(234, 67, 53);
+	text-align: center;
+	vertical-align: middle;
+	z-index: -1;
+}
+
+#headBar div{
+	position: relative;
+	margin: 40px 0 0 0;
+	color: white;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+select{
+	border-color: rgb(234, 67, 53);
+	border-radius: 5px;
+	border-width: 3px;
+	position: absolute;
+	margin-top: 25%;
+	left: 15%;
+}
+
+table{
+	margin-top: 25%;
+}
+
+button{
+	background-color: rgb(251, 188, 4);
+	width: 100px;
+	height: 100px;
+}
+
+button:hover{
+	background-color: rgb(52, 168, 83);
+}
+
+.info{
+	border-radius: 5px;
+	border-color: rgb(52, 168, 83);
+	border-style: solid;
+	border-width: 3px;
+}
+
+#info{
+	margin-top: 5%;
+	font-weight: bold;
+	font-family: "calibri";
+	font-size: 20px;
+}
+
+#operation{
+	position: absolute;
+	margin-top: -25%;
+	left: 15%;
+}
+
+input{
+	cursor: pointer;
+	position: absolute;
+	border-radius: 5px;
+	border-style: none;
+	color: white;
+	font-size: 20px;
+	width: 100px;
+	height:50px;
+}
+
+input:hover{
+	transform: scale(1.1);
+	box-shadow: 3px 3px 3px #888888;
+	transition: 0.2s;
+}
+
+#start{
+	background-color: rgb(234, 67, 53);
+	top: 0;
+}
+
+#restart{
+	background-color: rgb(251, 188, 4);
+	top: 75px;
+}
+
+#concede{
+	background-color: rgb(52, 168, 83);
+	top: 150px;
+}
+
+#refresh{
+	background-color: rgb(66, 133, 244);
+	top: 225px;
+}
+
+img{
+	width: 80px;
+	height: 80px;	
+}
+
+.info{
+	background-color: white;
+	align-content: center;
+	text-align: center;
+	position: relative;
+	top: 30px;
+	margin: auto;
+	width: 300px;
+	height: 50px;
+}
+
+#footBar{
+	position: absolute;
+	bottom: 0%;
+	left: 0;
+	height: 15%;
+	width: 100%;
+	background-color: rgb(66, 133, 244);
+	z-index: -1;
+}
+
+#footBar div{
+	background-color: rgb(52, 168, 83);
+	position: absolute;
+	width: 200px;
+	height: 40px;
+	right: 10%;
+	bottom: 40px;
+	border-radius: 5px;
+}
+
+#footBar div img{
+	position: absolute;
+	left: 15px;
+	top: 10px;
+	width: 20px;
+	height: 20px;
+}
+
+#footBar div a{
+	position: absolute;
+	left: 50px;
+	top: 8px;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	font-weight: normal;
+}
